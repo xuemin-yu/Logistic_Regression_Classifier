@@ -14,11 +14,11 @@ This is an optional step if we want to validate the performance of the classifie
 
 ### 3. Logistic Regression Classifier 
 Run **'logistic_regression.sh'** <br/>
-We can choose to do the train, or validation, or predict, or all of them by setting the arguments **'--do_train, 
+* We can choose to do the train, or validation, or predict, or all of them by setting the arguments **'--do_train, 
 --do_validate, --do_predict'**. <br/>
-We can load the datasets separately by setting the arguments **'--train_file_path, --validate_file_path, 
+* We can load the datasets separately by setting the arguments **'--train_file_path, --validate_file_path, 
 --predict_file_path'**. <br/>
-Also, we can choose to load the classifier from the local file by setting the argument **'--load_classifier_from_local'
+* Also, we can choose to load the classifier from the local file by setting the argument **'--load_classifier_from_local'
 and '--classifier_file_path'**. <br/>
 
 If we want to validate the performance of the classifier, we can set up the **'logistic_regression.sh'** scripts as follows: <br/>
