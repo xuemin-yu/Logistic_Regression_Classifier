@@ -3,7 +3,7 @@
 ## Usage
 ### 1. Generate the CSV file 
 Run **'generate_csv_file.sh'**<br/>
-Generating the CSV file based on the cluster file and filtered dataset file created by ConceptX. <br/>
+Generating the CSV file based on the cluster file and filtered dataset file created by ConceptX.
 The CSV format is as follows: <br/>
 token\tline_idx\tposition_idx\tembedding\tcluster_idx
 
@@ -14,11 +14,11 @@ This is an optional step if we want to validate the performance of the classifie
 
 ### 3. Logistic Regression Classifier 
 Run **'logistic_regression.sh'** <br/>
-* We can choose to do the train, or validation, or predict, or all of them by setting the arguments **'--do_train, 
+We can choose to do the train, or validation, or predict, or all of them by setting the arguments **'--do_train, 
 --do_validate, --do_predict'**. <br/>
-* We can load the datasets separately by setting the arguments **'--train_file_path, --validate_file_path, 
+We can load the datasets separately by setting the arguments **'--train_file_path, --validate_file_path, 
 --predict_file_path'**. <br/>
-* Also, we can choose to load the classifier from the local file by setting the argument **'--load_classifier_from_local'
+Also, we can choose to load the classifier from the local file by setting the argument **'--load_classifier_from_local'
 and '--classifier_file_path'**. <br/>
 
 If we want to validate the performance of the classifier, we can set up the **'logistic_regression.sh'** scripts as follows: <br/>
@@ -47,4 +47,26 @@ python logistic_regression.py \
   --do_predict \
   --classifier_file_path ./result/model/layer_${layer}_classifier.pkl \
   --load_classifier_from_local
+```
+
+### 4. Get the Prediction Statistics
+Run **'get_prediction_stats.sh'** <br/>
+Getting the statistics for the prediction results. <br/>
+Calculating the accuracy for the top1, top2, and top5 predictions. <br/>
+
+If we want to get the statistics for the single layer, we can set up the **'get_prediction_stats.sh'** scripts as follows: <br/>
+Example: <br/>
+```
+layer=12
+python get_prediction_stats.py \
+  --layer ${layer} \
+  --file_path ./result/validate_predictions/
+```
+
+If we want to get the statistics for all layers, we can set up the **'get_prediction_stats.sh'** scripts as follows: <br/>
+Example: <br/>
+```
+python get_prediction_stats.py \
+  --all_layer_stats \
+  --file_path ./result/validate_predictions/
 ```
