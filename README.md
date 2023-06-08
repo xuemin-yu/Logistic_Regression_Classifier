@@ -3,7 +3,7 @@
 ## Usage
 ### 1. Generate the CSV file 
 Run **'generate_csv_file.sh'**<br/>
-Generating the CSV file based on the cluster file and filtered dataset file created by ConceptX.
+Generating the CSV file based on the cluster file and filtered dataset file created by ConceptX. <br/>
 The CSV format is as follows: <br/>
 token\tline_idx\tposition_idx\tembedding\tcluster_idx
 
